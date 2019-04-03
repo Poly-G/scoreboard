@@ -1,26 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Header from './components/Header/Header';
+import Player from './components/Player/Player';
+
+const players = [{
+    name: "Devin",
+    score: 50,
+    id: 1
+  },
+  {
+    name: "Lauren",
+    score: 85,
+    id: 2
+  },
+  {
+    name: "Poly",
+    score: 95,
+    id: 3
+  },
+  {
+    name: "James",
+    score: 80,
+    id: 4
+  }
+]
+
+
 class App extends Component {
-  render() {
+  render(props) {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+     <div className="scoreboard">
+      <Header 
+       title="Scoreboard" 
+       totalPlayers={players.length}
+       />
+    
+    
+    {/* Players List*/}
+    {players.map( player =>
+      <Player 
+        name={player.name} 
+        key={player.id.toString()}
+       />
+      
+    )}
+    </div>
     );
   }
 }
