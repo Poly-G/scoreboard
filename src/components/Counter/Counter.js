@@ -1,23 +1,27 @@
 import React from 'react'
 
 class Counter extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
       score: 0
     }
   }
   
-   incrementScore = e => {
-    this.setState({ 
-      score: this.state.score + 1
+   incrementScore = () => {
+    this.setState( prevState => {
+        return { 
+            score: prevState.score + 1
+        } 
       });
   };
 
-    decrementScore = e => {
-    this.setState({ 
-      score: this.state.score - 1
-      });
+    decrementScore = () => {
+    this.setState(prevState => {
+        return {
+            score: prevState.score - 1
+        }
+    });
   };
   
   render(){

@@ -28,7 +28,7 @@ const players = [{
 
 
 class App extends Component {
-  render(props) {
+  render() {
     return (
      <div className="scoreboard">
       <Header 
