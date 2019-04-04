@@ -6,42 +6,54 @@ import Player from './components/Player/Player';
 
 const players = [{
     name: "Devin",
-    score: 50,
     id: 1
   },
   {
     name: "Lauren",
-    score: 85,
     id: 2
   },
   {
     name: "Poly",
-    score: 95,
     id: 3
   },
   {
     name: "James",
-    score: 80,
     id: 4
   }
 ]
 
 
 class App extends Component {
+
+state = {
+  players: players
+}
+
+handleRemovePlayer = (id) => {
+  this.setState( prevState => {
+    return {
+      players: prevState.players.filter( p => p.id !== id )
+    }
+  })
+}
+
   render() {
     return (
      <div className="scoreboard">
       <Header 
        title="Scoreboard" 
-       totalPlayers={players.length}
+       totalPlayers={this.state.players.length}
        />
     
     
     {/* Players List*/}
-    {players.map( player =>
+    {this.state.players.map( player =>
       <Player 
         name={player.name} 
+        id={player.id}
         key={player.id.toString()}
+        removePlayer={this.handleRemovePlayer}
+
        />
       
     )}
