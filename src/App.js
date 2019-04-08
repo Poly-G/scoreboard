@@ -43,16 +43,18 @@ state = {
    };
 
 handleAddPlayer = name => {
-  this.setState({
-    players: [
-      ...this.state.players,
-      {
-        name: name,
-        score: 0,
-        id: Date.now()
-      }
-    ]
-  })
+  this.setState( prevState => {
+    return {
+      players: [
+        ...prevState.players,
+        {
+          name: name,
+          score: 0,
+          id: Date.now()
+        }
+      ]
+    };
+  });
 }
 
 handleRemovePlayer = (id) => {
