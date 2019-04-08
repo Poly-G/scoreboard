@@ -42,6 +42,19 @@ state = {
      }))
    };
 
+handleAddPlayer = name => {
+  this.setState({
+    players: [
+      ...this.state.players,
+      {
+        name: name,
+        score: 0,
+        id: Date.now()
+      }
+    ]
+  })
+}
+
 handleRemovePlayer = (id) => {
   this.setState( prevState => {
     return {
@@ -72,7 +85,7 @@ handleRemovePlayer = (id) => {
        />
       
     )}
-    <AddPlayerForm />
+    <AddPlayerForm addPlayer={this.handleAddPlayer}/>
     </div>
     );
   }
