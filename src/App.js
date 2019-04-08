@@ -53,7 +53,7 @@ handleRemovePlayer = (id) => {
      <div className="scoreboard">
       <Header 
        title="Scoreboard" 
-       totalPlayers={this.state.players.length}
+       players={this.state.players}
        />
     
     
