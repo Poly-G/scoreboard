@@ -3,6 +3,8 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import Player from './components/Player/Player';
+import AddPlayerForm from './components/AddPlayerForm/AddPlayerForm';
+
 
 const players = [{
     name: "Devin",
@@ -70,6 +72,7 @@ handleRemovePlayer = (id) => {
        />
       
     )}
+    <AddPlayerForm />
     </div>
     );
   }
