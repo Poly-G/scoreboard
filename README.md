@@ -1,4 +1,4 @@
-# Welcome to StackEdit!
+# Welcome to SCOREBOARD APP!
 
 A scoreboard app built in React.js
 
